@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th> customerId</th>
+      <th>InqurieId</th>
+      <th>ItemId</th>
+      <th> productName</th>
+      <th>InqurieDate</th>
+      <th> verify Details </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of sales | async">
+      <td>{{p.customerId}}</td>
+      <td>{{p.orderId}}</td>
+      <td>{{p.itemId}}</td>
+      <td>{{p.productName}}</td>
+      <td>{{p.inqurieDate}}</td>
+      <td>
+        <button [routerLink]="['/order-cancellation',p.customerId]" type="button" class="btn-materials-mangement"> admin
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

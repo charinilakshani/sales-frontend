@@ -1,0 +1,33 @@
+<table class="table" >
+<thead>
+  <tr>
+    <th> clientId</th>
+    <th>Names</th>
+    <th>Trading Name(if business</th>
+    <th> Main Location(for Billing)</th>
+    <th>delevery Location</th>
+    <th>collection location(for return)</th>
+    <th>customer Mobile Number</th>
+    
+    <th> Email Address</th>
+    <th> View History</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor ="let p of customers | async">
+    <td>{{p.clientId}}</td>
+    <td>{{p.cName}}</td>
+    <td>{{p.cbusinessName}}</td>
+    <td>{{p.cmainLocation}}</td>
+    <td>{{p.cdeleveryLocation}}</td>
+    <td>{{p.ccollectionLocation}}</td>
+    <td>{{p.cmobilenumber}}</td>
+    <td>{{p.cemail}}</td>
+    <td> 
+      <a > view History</a>
+      <!-- <a [routerLink] ="['/view-customer-information/' , p.id]"> View History</a> -->
+    </td>
+  </tr>
+</tbody>
+
+</table>

@@ -1,0 +1,42 @@
+<!-- <div> 
+    <button type="button" class="add-inqurie"> add </button> 
+</div> -->
+<a  routerLink="/admininqurie/new" class="btn btn-primary">  new inquries</a>
+   
+
+ 
+<table class="table" >
+        <thead>
+          <tr>
+            <th> customerId</th>
+            <th>InqurieId</th>
+            <th>ItemId</th>
+            <th> productName</th>
+            <th>Quntity</th>
+            <th>price</th>
+            <th>InqurieDate</th>
+            <th> admin </th>
+            <th> View availibilty</th>
+            <th> Reserve for 24</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor ="let p of inquries | async">
+            <td>{{p.customerId}}</td>
+            <td>{{p.inqurieId}}</td>
+            <td>{{p.itemId}}</td>
+            <td>{{p.productName}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.date}}</td>
+            <td>
+                <button [routerLink] ="['/admininqurie',p.customerId]"type="button" class="btn-materials-mangement"> admin </button> </td>
+            <td></td>
+            <td> 
+                <button  [routerLink] ="['/reserve24',p.customerId]" type="button" class="btn"> Reserve </button>
+            </td>
+          </tr>
+        </tbody>
+        
+        </table>
+        

@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import"~bootstrap/dist/css/bootstrap.css";
+
+body{
+    padding-top:50px;
+    padding-right: 150px;
+}
+.btn{
+    background-color: rgb(57, 65, 57); /* Green */
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+ }  
+
+ .btn-materials-mangement{
+    background-color: rgb(2, 12, 73); /* Green */
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+ }
+ .btn btn-primary{
+    /* background-color: rgb(158, 172, 158); /* Green */
+    /* border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; */ 
+    margin-left : 94%;
+    
+ }
+
