@@ -1,3 +1,6 @@
+<a  routerLink="/send-materials-managment/new" class="btn btn-primary">  new new order</a>
+
+
 <table class="table" >
     <thead>
       <tr>
@@ -19,23 +22,23 @@
     </thead>
     <tbody>
       <tr *ngFor ="let p of sales | async">
-        <td>{{p.customerId}}</td>
-        <td>{{p.quntity}}</td>
+        <td>{{p.itemName}}</td>
+        <td>{{p.qty}}</td>
         <td></td>
-        <td>{{p.customerName}}</td>
-        <td>{{p.deleveryType}}</td>
-        <td>{{p.deleveryLocation}}</td>
-        <td>{{p.courierName}}</td>
+        <td>{{p.deliveryType}}</td>
+        <td>{{p.mainLocation}}</td>
+        <td>{{p.orderDate}}</td>
+        <td>{{p.businessId}}</td>
         <td>
           
         </td>
         <td>
-            <button  [routerLink] ="['/send-materials-managment',p.customerId]"  type="button" class="btn-materials-mangement"> view </button>
+            <button  [routerLink] ="['/send-materials-managment',p.orderId]"  type="button" class="btn-materials-mangement"> view </button>
         </td>
        
 
         <td> 
-          <button type="button" class="btn"> view </button>
+          <button type="button"  class="btn"> view </button>
                    
         </td>
       </tr>

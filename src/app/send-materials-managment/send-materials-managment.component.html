@@ -1,11 +1,79 @@
-<div class="card">
-    <h5 class="card-header">This order is passed to materials management to process.</h5>
-    <div class="card-body">
-      <h5 class="card-title">productName</h5>
-      <h5 class="card-title">itemId</h5>
-      <h5 class="card-title">quntity</h5>
 
-      <p class="card-text">  this product details send to check  with MM</p>
-      <a href="#" class="btn btn-primary">send</a>
-    </div>
-  </div>  
+<form #f ="ngForm" (ngSubmit)="save(f.value)" >
+  <div class="card">
+    <h5 class="card-header">This order is passed to materials management to process.</h5>
+  
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+
+                <input #orderId="ngModel" [(ngModel)]="salesOrder.orderId" name="orderId" id="orderId" type="text" class="form-control" readonly="true">
+                
+                <h5 class="card-title">Item id</h5>
+                <div class="form-group">
+                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
+                </div>
+          
+          
+                <h5 class="card-title">itemName</h5>
+          
+                <div class="form-group">
+                  <input #itemName ="ngModel" [(ngModel)] ="salesOrder.itemName" name ="itemName" id ="itemName" type="text" class="form-control">
+                </div>
+                <h5 class="card-title">quntity</h5>
+                <div class="form-group">
+                  <input #qty ="ngModel" [(ngModel)] ="salesOrder.qty" name ="qty" id ="qty" type="number" class="form-control">
+                </div>
+                <h5 class="card-title">mainLocation</h5>
+                <div class="form-group">
+                  <input #mainLocation ="ngModel" [(ngModel)] ="salesOrder.mainLocation" name ="mainLocation" id ="mainLocation" type="text" class="form-control">
+                </div>
+                <h5 class="card-title">orderDate</h5>
+                <div class="form-group">
+                  <input #orderDate ="ngModel" [(ngModel)] ="salesOrder.orderDate" name ="orderDate" id ="orderDate" type="datetime-local" class="form-control">
+                </div>
+          
+          
+            </div>
+            <div class="col-md-6">
+                <h5 class="card-title">productName</h5>
+                <div class="form-group">
+                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
+                </div>
+
+                <h5 class="card-title">productName</h5>
+                <div class="form-group">
+                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
+                </div>
+
+                <h5 class="card-title">productName</h5>
+                <div class="form-group">
+                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
+                </div>
+
+                <h5 class="card-title">productName</h5>
+                <div class="form-group">
+                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
+                </div>
+
+                <h5 class="card-title">productName</h5>
+                <div class="form-group">
+                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
+                </div>
+              </div>
+        </div>
+
+        
+         
+            
+
+        <p class="card-text">  this product details send to check  with MM</p>
+        <button class="btn btn-primary" > save</button>
+       
+      </div>
+    
+   
+ 
+  </div>
+</form>
+  

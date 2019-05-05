@@ -15,14 +15,14 @@
 </thead>
 <tbody>
   <tr *ngFor ="let p of customers | async">
-    <td>{{p.clientId}}</td>
-    <td>{{p.cName}}</td>
-    <td>{{p.cbusinessName}}</td>
-    <td>{{p.cmainLocation}}</td>
-    <td>{{p.cdeleveryLocation}}</td>
-    <td>{{p.ccollectionLocation}}</td>
-    <td>{{p.cmobilenumber}}</td>
-    <td>{{p.cemail}}</td>
+    <td>{{p.customerId}}</td>
+    <td>{{p.customerName}}</td>
+    <td>{{p.tradingName}}</td>
+    <td>{{p.mainLocation}}</td>
+    <td>{{p.deliveryLocation}}</td>
+    <td>{{p.collectionLocation}}</td>
+    <td>{{p.telephoneNumber}}</td>
+    <td>{{p.email}}</td>
     <td> 
       <a > view History</a>
       <!-- <a [routerLink] ="['/view-customer-information/' , p.id]"> View History</a> -->

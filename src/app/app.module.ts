@@ -17,8 +17,8 @@ import { ViewConfirmationfromProductionComponent } from './view-confirmationfrom
 import { IssueNoteWareHouseComponent } from './issue-note-ware-house/issue-note-ware-house.component';
 import { ViewCustomerInformationComponent } from './view-customer-information/view-customer-information.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
-import{CustomerService} from './customer.service';
-import{SalesInquriesService} from './sales-inquries.service';
+import{CustomerService} from './Services/customer.service';
+import{salesEnquiryService} from './Services/salesEnquiryService';
 import { AdmininqurieComponent } from './admininqurie/admininqurie.component';
 import { Reserve24Component } from './reserve24/reserve24.component';
 
@@ -68,7 +68,7 @@ import { OrderCancellationComponent } from './order-cancellation/order-cancellat
       { path: 'view-customer-information', component: ViewCustomerInformationComponent },
       { path: 'view-order-history', component: ViewOrderHistoryComponent },
       { path: 'view-leads-inquries', component: ViewLeadsInquriesComponent },
-      { path: 'view-sales-orders', component: ViewSalesOrdersComponent },
+     
       { path: 'send-materials-managment', component: SendMaterialsManagmentComponent },
       {path: 'view-return-order',component:ViewReturnOrderComponent},
       { path: 'view-confirmationfrom-production', component: ViewConfirmationfromProductionComponent },
@@ -77,10 +77,14 @@ import { OrderCancellationComponent } from './order-cancellation/order-cancellat
       { path: 'order-cancellation', component:   OrderCancellationComponent},
 
       // { path: 'view-return-order', component: IssueNoteWareHouseComponent },
+      { path: 'view-sales-orders', component: ViewSalesOrdersComponent },
+      { path: 'view-sales-orders/:orderId', component: ViewSalesOrdersComponent },
 
       {path: 'admininqurie/new', component: AdmininqurieComponent},
-      {path: 'admininqurie/:customerId', component: AdmininqurieComponent},
-      {path: 'send-materials-managment/:customerId', component: SendMaterialsManagmentComponent},
+      {path: 'admininqurie/:enquiryId', component: AdmininqurieComponent},
+
+      {path: 'send-materials-managment/new', component: SendMaterialsManagmentComponent},
+      {path: 'send-materials-managment/:orderId', component: SendMaterialsManagmentComponent},
       {path: 'reserve24/:customerId', component: Reserve24Component},
       { path: 'order-cancellation/:customerId', component:   OrderCancellationComponent},
 
@@ -88,7 +92,7 @@ import { OrderCancellationComponent } from './order-cancellation/order-cancellat
     ])
   ],
   providers: [CustomerService,
-    SalesInquriesService
+    salesEnquiryService
   ],
   bootstrap: [AppComponent]
 })

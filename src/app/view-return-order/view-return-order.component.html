@@ -1,3 +1,39 @@
-<p>
-  view-return-order works!
-</p>
+
+<a  routerLink="/view-confirmationfrom-production" class="btn btn-primary"> Admin</a>
+
+<table class="table" >
+    <thead>
+      <tr>
+        <th>clientId</th>
+        <th>Client Name</th>
+        <th>exchange Type</th>
+        <th>  rsbb</th>
+        <th>
+          Arange item to be collected
+        </th>
+      
+       
+      
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let p of returnOrder | async">
+        <td>{{p.itemId}}</td>
+        <td>{{p.note}}</td>
+        <td>{{p.returnType}}
+
+          </td>
+        <td>
+             {{p.ReturnDate}}
+        </td>
+        <td>
+          <button [routerLink] ="['/admininqurie',p.enquiryId]"type="button" class="btn-materials-mangement"> arrange </button> </td>
+        
+       
+      </tr>
+    </tbody>
+    
+    </table>
+    

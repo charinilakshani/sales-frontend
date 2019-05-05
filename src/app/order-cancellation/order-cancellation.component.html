@@ -1,4 +1,47 @@
 <!-- // search customerId -->
+<p>
+  <input #query (keyup) ="filter(query.value)"
+   type="text" class="form-control" placeholder="Search...">
+</p>
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th> clientId</th>
+      <th>order Id </th>
+      <th>Material Managemenent Status</th>
+      <th> inqurieDate</th>
+      <th>production Status</th>
+      <th>ware House Status</th>
+      <th>Cancleation Order for cusotmer </th>
+      <th> check poduction</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let p of sales | async">
+      <td>{{p.itemName}}</td>
+      <td>{{p.qty}}</td>
+      <td></td>
+      <td>{{p.deliveryType}}</td>
+      <td>{{p.mainLocation}}</td>
+      <td>{{p.orderId}}</td>
+      <td>     
+           <button type="button" (click)="updateSatus(p.orderId)"  class="btn"> Confrim </button>
+           
+      </td>   
+      <td> 
+          <button type="button"   (click)="sendForPenalty(p.orderId)"  class="btn"> check </button>        
+      </td>
+    </tr>
+  </tbody>
+  
+  </table>
+  
+
+
+
+
 
 
 

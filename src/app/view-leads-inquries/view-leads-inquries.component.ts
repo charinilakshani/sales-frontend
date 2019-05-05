@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SalesInquriesService } from '../sales-inquries.service';
+import {  salesEnquiryService } from '../Services/salesEnquiryService';
 
 @Component({
   selector: 'app-view-leads-inquries',
@@ -8,7 +8,7 @@ import { SalesInquriesService } from '../sales-inquries.service';
 })
 export class ViewLeadsInquriesComponent implements OnInit {
 inquries
-  constructor(private  salesinqurieservice : SalesInquriesService ) { 
+  constructor(private  salesinqurieservice : salesEnquiryService ) { 
        //view all inquries
        this.inquries = this.salesinqurieservice.getallInqurieInfo();
        console.log("get all inquries details", this.inquries);

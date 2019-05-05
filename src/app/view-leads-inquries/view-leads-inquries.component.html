@@ -17,23 +17,28 @@
             <th>InqurieDate</th>
             <th> admin </th>
             <th> View availibilty</th>
+            <th> enquiryDate</th>
             <th> Reserve for 24</th>
+
           </tr>
         </thead>
         <tbody>
           <tr *ngFor ="let p of inquries | async">
-            <td>{{p.customerId}}</td>
-            <td>{{p.inqurieId}}</td>
+            <td>{{p.enquiryId}}</td>
             <td>{{p.itemId}}</td>
-            <td>{{p.productName}}</td>
+            <td>{{p.itemName}}</td>
             <td>{{p.quantity}}</td>
-            <td>{{p.price}}</td>
-            <td>{{p.date}}</td>
+            <td>{{p.itemAvailability}}</td>
+            <td>{{p.deliveryType}}</td>
+            <td>{{p.creditStatus}}</td>
+            <td>{{p.enquiryDate}}</td>
+         
+
             <td>
-                <button [routerLink] ="['/admininqurie',p.customerId]"type="button" class="btn-materials-mangement"> admin </button> </td>
+                <button [routerLink] ="['/admininqurie',p.enquiryId]"type="button" class="btn-materials-mangement"> admin </button> </td>
             <td></td>
             <td> 
-                <button  [routerLink] ="['/reserve24',p.customerId]" type="button" class="btn"> Reserve </button>
+                <!-- <button  [routerLink] ="['/reserve24',p.customerId]" type="button" class="btn"> Reserve </button> -->
             </td>
           </tr>
         </tbody>
