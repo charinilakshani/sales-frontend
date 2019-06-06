@@ -6,7 +6,7 @@ import { salesOrder } from '../Model/salesOrder';
   providedIn: 'root'
 })
 export class SalesOrderService {
-  url =" http://localhost:8081/salesOrder"
+  url =" http://localhost:8080/salesOrder"
 
   constructor(private http:HttpClient) {}
   getAllSalesDetails() {
@@ -15,7 +15,6 @@ export class SalesOrderService {
     // return 
   }
  
-
     addNewProduct(Products) {
       console.log( Products);
       return this.http.post(this.url,Products);

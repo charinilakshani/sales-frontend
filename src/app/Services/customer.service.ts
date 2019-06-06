@@ -9,7 +9,7 @@ import { clienInfo } from '../Model/clientInfo';
 export class CustomerService {
 
   constructor(private http:HttpClient) { }
-  url ="  http://localhost:8081/clientInfo"
+  url ="  http://localhost:8080/clientInfo"
 
   getAllCustomer() {
     console.log("get all customerDetails ", this.http.get<clienInfo[]>(this.url));

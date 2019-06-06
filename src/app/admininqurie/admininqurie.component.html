@@ -1,102 +1,110 @@
+ <div class="row">
+   <div class="col">
 
-<form #f ="ngForm" (ngSubmit)="save(f.value)" >
-    <div class="row">
+     <form #f="ngForm" (ngSubmit)="save(f.value)">
 
-  
-        <div class="col-md-4">
 
-            <input #enquiryId="ngModel" [(ngModel)]="salesEnquiry.enquiryId" name="enquiryId" id="enquiryId" type="text" class="form-control" readonly="true">
-              <div class="form-group">
-                  <label for ="itemId"> itemId</label>
-                  <input #itemId ="ngModel" [(ngModel)] ="salesEnquiry.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
-            
-                <div class="form-group">
-                    <label for ="itemName"> itemName</label>
-                    <input #itemName ="ngModel" [(ngModel)] ="salesEnquiry.itemName" name ="itemName" id ="itemName" type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <label for ="itemAvailability"> itemAvailability</label>
-                      <input  [(ngModel)] ="salesEnquiry.itemAvailability" name ="itemAvailability" id ="itemAvailability" type="text" class="form-control">
-                    </div>
+       <input #enquiryId="ngModel" [(ngModel)]="salesEnquiry.enquiryId" name="enquiryId" id="enquiryId" type="text"
+         class="form-control" readonly="true">
+         
+         <div class="form-group">
+            <label for="enquiryId"> enquiryId</label>
+            <input [(ngModel)]="salesEnquiry.enquiryId" name="enquiryId " id="enquiryId" type="number"
+              class="form-control">
+          </div>
 
-                  <div class="form-group">
-                      <label for ="enquiryDate"> Date</label>
-                      <input  [(ngModel)] =" salesEnquiry.enquiryDate" name ="enquiryDate" id ="enquiryDate" type="date" class="form-control">
-                    </div>
-                 
-                    <button class="btn btn-primary" >  save</button>
-                    <button class="btn btn-primary" >  convert to order</button>
-
-        
-          
-    </div>
-    <div class="col-md-4">
+       <div class="form-group">
+         <label for="enquiryDate"> Date</label>
+         <input [(ngModel)]=" salesEnquiry.enquiryDate" name="enquiryDate" id="enquiryDate" type="date"
+           class="form-control">
+       </div>
+       <div class="form-group">
+         <label for="creditStatus"> creditStatus</label>
+         <input [(ngModel)]="salesEnquiry.creditStatus" name="creditStatus" id="creditStatus" type="text"
+           class="form-control">
+       </div>
       
-          <div class="form-group">
-              <label for ="enquiryId"> enquiryId</label>
-              <input  [(ngModel)] ="salesEnquiry.enquiryId" name="enquiryId " id ="enquiryId" type="number" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for ="quantity"> quantity</label>
-                <input  [(ngModel)] ="salesEnquiry.quantity" name="quantity" id ="quantity" type="number" class="form-control">
-              </div>
-              <div class="form-group">
-                  <label for ="creditStatus"> creditStatus</label>
-                  <input   [(ngModel)] ="salesEnquiry.creditStatus" name ="creditStatus" id ="creditStatus" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for ="price"> Price</label>
-                    <input  [(ngModel)] ="salesEnquiry.price" name ="price" id ="price" type="number" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <label for ="deliveryType"> deliveryType</label>
-                      <input  [(ngModel)] ="salesEnquiry.deliveryType" name ="deliveryType" id ="deliveryType" type="number" class="form-control">
-                    </div>
-             
-       
-      </div>
-  
-    
-    
-  
-    
-  
-      <div class="col-md-4">
-          <div class="card">
-              <h5 class="card-header">check aviliblity with Material Management</h5>
-              <div class="card-body">
-                  <table class="table" >
-                      <thead>
-                        <tr>
-                          <th>Item Name</th>
-                          <th>Item Id</th>
-                          <th>exchange Type</th>
-                         
-                        
-                           
-                  
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor ="let p of returnOrder | async">
-                          <td>{{p.itemId}}</td>
-                          <td>{{p.note}}</td>
-                          <td>{{p.returnType}}
-                  
-                         
-                        </tr>
-                      </tbody>
-                      
-                      </table>
-                      
-                  
-              </div>
-            </div>  
-            </div>
-      
-     
-  </div>
-  
-</form>
+       <div class="form-group">
+         <label for="deliveryType"> deliveryType</label>
+         <input [(ngModel)]="salesEnquiry.deliveryType" name="deliveryType" id="deliveryType" type="text"
+           class="form-control">
+       </div>
 
+       <button class="btn btn-primary" type="submit">save</button>
+       <button class="btn btn-primary"> convert to order</button>
+
+     </form>
+   </div>
+   
+   <div class="col">
+
+     <div class="card">
+       <!-- <h5 class="card-header">check aviliblity with Material Management</h5> -->
+       <div class="card-body">
+         <table class="table">
+           <thead>
+             <tr>
+               <th>Item Name</th>
+               <th>Item Quantity</th>
+               <th>Item Price</th>
+               <th>Availability</th>
+
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let item of orderItems">
+               <td>{{item.enquiryProductName}}</td>
+               <td><input type="number" [(ngModel)]="item.quantity" name="quantity"></td>
+               <td>{{item.enquiryProductPrice}}</td>
+               <td><span>Not</span> Available</td>
+
+
+             </tr>
+           </tbody>
+
+         </table>
+
+
+       </div>
+     </div>
+
+
+   </div>
+   
+   <div class="col">
+     <div class="card">
+       <h5 class="card-header">Select items for the inquiry</h5>
+       <div class="card-body">
+         <table class="table-sm">
+           <thead>
+             <tr>
+               <th>Item Id</th>
+               <th>Item Name</th>
+               <th>Item Price</th>
+               <th>exchange Type</th>
+               <th></th>
+
+
+
+
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let p of products">
+               <td>{{p.prodId}}</td>
+               <td>{{p.prodName}}</td>
+               <td>{{p.prodPrice}}</td>
+               <td>{{p.qty}}</td>
+               <td><button (click)="addItem(p)" class="btn-sm btn-primary">Add</button></td>
+
+             </tr>
+           </tbody>
+
+         </table>
+
+
+       </div>
+     </div>
+   </div>
+
+ </div>

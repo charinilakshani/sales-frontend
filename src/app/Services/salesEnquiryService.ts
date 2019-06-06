@@ -10,7 +10,7 @@ export class salesEnquiryService {
 
   constructor(private http:HttpClient) { }
 
-  url ="http://localhost:8081/salesEnquiry"
+  url ="http://localhost:8080/salesEnquiry"
   getallInqurieInfo() {
     console.log("get all inquriessss ", this.http.get<salesEnquiry[]>(this.url));
     return this.http.get<salesEnquiry[]>(this.url);
@@ -19,6 +19,8 @@ export class salesEnquiryService {
   addNewEnquiry(salesEnquiry) {
 
     console.log( "send from service",salesEnquiry);
+         
+
     return this.http.post(this.url,salesEnquiry);
   }
 
