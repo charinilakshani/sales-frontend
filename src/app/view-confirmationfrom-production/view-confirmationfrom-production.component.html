@@ -1,22 +1,19 @@
 
-<a  routerLink="/view-confirmationfrom-production" class="btn btn-primary">  add new order inquriy</a>
+ 
 
 <table class="table" >
     <thead>
       <tr>
         <th>clientId</th>
         <th>Client Name</th>
-        <th>exchange Type</th>
+        <th>Return Type</th>
         <th>
           Arange item to be collected
         </th>
-        <th> confrimcredit(Return)</th>
-        <th>confirm repire</th>
-        <th>confirm exchange</th>
-       
+        <th> confrim credit(Return)</th>
+        <th>Re order as repire one(repire) </th>
+        <th>Re order As new order(Exchange)</th>
       
-        
-
       </tr>
     </thead>
     <tbody>
@@ -30,22 +27,18 @@
              {{p.ReturnDate}}
         </td>
         <td>
-            <button  (click)="updateReturnAsCredit(p.orderId)"   type="button" class="btn-materials-mangement"> credit </button>
-        <!-- </td>
-        <button  [routerLink] ="['/send-materials-managment',p.orderId]"  type="button" class="btn-materials-mangement"> credit </button> -->
+            <button    type="button" class="btn-materials-mangement"> credit </button>
+       </td>
+       <td>
+        <button   [routerLink] ="['/view-sales-orders']"  type="button" class="btn-materials-mangement"> repire </button> 
         
+       </td>
          <td> 
-            <button (click)="updateReturnAsExchange(p.orderId)" routerLink="/view-sales-orders" type="button" class="btn-materials-mangement"> new </button>
+            <button  [routerLink] ="['/send-materials-managment/new']" type="button" class="btn-materials-mangement"> new </button>
         </td>
        
-
-        <td> 
-          <button  (click)="updateReturnAsRepire(p.orderId)"  type="button" class="btn"> view </button>
-                   
-        </td>
-      </tr>
     </tbody>
     
     </table>
-    
-
+     
+ 

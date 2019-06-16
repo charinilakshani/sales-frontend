@@ -22,46 +22,46 @@ export class ViewConfirmationfromProductionComponent implements OnInit {
   ngOnInit() {
   }
 
-  updateReturnAsCredit(orderId){
+  // updateReturnAsCredit(orderId){
 
-  }
-  updateReturnAsExchange(orderId){
-     console.log("order Id",orderId);
-    let salesOrder = <salesOrder>new Object();
-    salesOrder.orderId = salesOrder.orderId;
-    salesOrder.orderDate = salesOrder.orderDate;
-    salesOrder.itemId = salesOrder.itemId;
-    salesOrder.returnType ="exchange"
-    salesOrder.qty = salesOrder.qty;
+  // }
+  // updateReturnAsExchange(orderId){
+  //    console.log("order Id",orderId);
+  //   let salesOrder = <salesOrder>new Object();
+  //   salesOrder.orderId = salesOrder.orderId;
+  //   salesOrder.orderDate = salesOrder.orderDate;
+  //   salesOrder.itemId = salesOrder.itemId;
+  //   salesOrder.returnType ="exchange"
+  //   salesOrder.qty = salesOrder.qty;
 
-     console.log("salesOrder",salesOrder);
+  //    console.log("salesOrder",salesOrder);
   
-    this.salesorderService.updateProduct(salesOrder).subscribe(data => {
-      console.log(" update product", data);
+  //   this.salesorderService.updateProduct(salesOrder).subscribe(data => {
+  //     console.log(" update product", data);
   
     
 
       
-    // passed To MM under the repire 
-    // update the order table 
-  });
-  }
+  //   // passed To MM under the repire 
+  //   // update the order table 
+  // });
+  // }
 
-  updateReturnAsRepire(orderId){
-    console.log("order Id for for new order ",orderId);
-    // passed to mm for repire;
-    // update order table;
+  // updateReturnAsRepire(orderId){
+  //   console.log("order Id for for new order ",orderId);
+  //   // passed to mm for repire;
+  //   // update order table;
 
-    let salesOrder = <salesOrder>new Object();
-    salesOrder.orderId = salesOrder.orderId;
-    salesOrder.orderDate = salesOrder.orderDate;
-    salesOrder.itemId = salesOrder.itemId;
-    salesOrder.returnType ="repire"
-    salesOrder.qty = salesOrder.qty;
+  //   let salesOrder = <salesOrder>new Object();
+  //   salesOrder.orderId = salesOrder.orderId;
+  //   salesOrder.orderDate = salesOrder.orderDate;
+  //   salesOrder.itemId = salesOrder.itemId;
+  //   salesOrder.returnType ="repire"
+  //   salesOrder.qty = salesOrder.qty;
 
-    this.salesorderService.updateProduct(salesOrder).subscribe(data => {
-      console.log(" update product", data);
-    });
-  }
+  //   this.salesorderService.updateProduct(salesOrder).subscribe(data => {
+  //     console.log(" update product", data);
+  //   });
+  // }
 
 }

@@ -1,11 +1,24 @@
-import { salesEnquiryItem } from './salesEnquiryItem';
+import { salesEnquiryItems } from './salesEnquiryItems';
 
-export interface salesEnquiry {
+export interface SalesEnquiry {
     
     enquiryId: number;
-    itemAvailability: String;
-    deliveryType: String;
-    creditStatus: String;
-    enquiryDate: Date;
-    salesEnquiryItem:salesEnquiryItem[];
+    itemAvailability: string;
+    
+    deliveryType: string;
+    confirmStatus: string;
+    enquiryDate: string;
+
+    stockid:number;
+    stockname:string;
+    stocktype:string;
+    recorderlimit:number;
+    ltime:string;
+    stockPrice:number;
+    quantity:number;
+    description:string;
+    status:string;
+  
+
+    // salesEnquiryItems:salesEnquiryItems[];
 }

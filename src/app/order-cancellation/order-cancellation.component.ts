@@ -28,24 +28,24 @@ export class OrderCancellationComponent implements OnInit {
 
   }
 
-  sendForPenalty(orderId){
-    console.log("send for panalty", orderId);
-    // get from the back end
-    this.salesorderService.getOrderbyId(orderId).subscribe(order => {
-      console.log("get one product");
-      let salesOrder = <salesOrder>new Object();
-      salesOrder.orderId  =order.orderId;
-      salesOrder.orderDate =order.orderDate;
-      salesOrder.returnType ="cancel order";
+  // sendForPenalty(orderId){
+  //   console.log("send for panalty", orderId);
+  //   // get from the back end
+  //   this.salesorderService.getOrderbyId(orderId).subscribe(order => {
+  //     console.log("get one product");
+  //     let salesOrder = <salesOrder>new Object();
+  //     salesOrder.orderId  =order.orderId;
+  //     salesOrder.orderDate =order.orderDate;
+  //     salesOrder.returnType ="cancel order";
       
-      this.salesorderService.updateProduct(salesOrder).subscribe(res =>{
-        console.log("updated",res)
-      })
+  //     this.salesorderService.updateProduct(salesOrder).subscribe(res =>{
+  //       console.log("updated",res)
+  //     })
   
        
-      }, err => {
-        console.log(err);
-      });
+  //     }, err => {
+  //       console.log(err);
+  //     });
 
 
 
@@ -55,34 +55,34 @@ export class OrderCancellationComponent implements OnInit {
 
 
 
-    // set return type as cancel order
+  //   // set return type as cancel order
 
    
 
-  }
+  // }
 
-  updateSatus(orderId){
-    console.log("send for panalty", orderId);
-    // get from the back end
-    this.salesorderService.getOrderbyId(orderId).subscribe(order => {
+  // updateSatus(orderId){
+  //   console.log("send for panalty", orderId);
+  //   // get from the back end
+  //   this.salesorderService.getOrderbyId(orderId).subscribe(order => {
 
-      console.log("get one product");
+  //     console.log("get one product");
 
-      let salesOrder = <salesOrder>new Object();
-      salesOrder.orderId  =order.orderId;
-      salesOrder.orderDate =order.orderDate;
-      salesOrder.returnType ="cancel";
+  //     let salesOrder = <salesOrder>new Object();
+  //     salesOrder.orderId  =order.orderId;
+  //     salesOrder.orderDate =order.orderDate;
+  //     salesOrder.returnType ="cancel";
       
-      this.salesorderService.updateProduct(salesOrder).subscribe(res =>{
-        console.log("updated",res)
-      })
+  //     this.salesorderService.updateProduct(salesOrder).subscribe(res =>{
+  //       console.log("updated",res)
+  //     })
   
        
-      }, err => {
-        console.log(err);
-      });
+  //     }, err => {
+  //       console.log(err);
+  //     });
 
-    }
+  //   }
   }
 
 

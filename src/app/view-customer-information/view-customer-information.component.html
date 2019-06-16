@@ -1,3 +1,7 @@
+
+<a  routerLink="/add-client/new" class="btn btn-primary">  new Client </a>
+
+
 <table class="table" >
 <thead>
   <tr>
@@ -24,8 +28,8 @@
     <td>{{p.telephoneNumber}}</td>
     <td>{{p.email}}</td>
     <td> 
-      <a > view History</a>
-      <!-- <a [routerLink] ="['/view-customer-information/' , p.id]"> View History</a> -->
+      <!-- <a > view History</a> -->
+      <a [routerLink] ="['/add-client',p.customerId]"> View History</a>
     </td>
   </tr>
 </tbody>

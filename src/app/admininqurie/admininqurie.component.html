@@ -1,4 +1,5 @@
- <div class="row">
+<button (click)="placeOrder()" class="btn btn-primary"   >Place Order</button>
+<div class="row">
    <div class="col">
 
      <form #f="ngForm" (ngSubmit)="save(f.value)">
@@ -7,68 +8,112 @@
        <input #enquiryId="ngModel" [(ngModel)]="salesEnquiry.enquiryId" name="enquiryId" id="enquiryId" type="text"
          class="form-control" readonly="true">
          
+
          <div class="form-group">
-            <label for="enquiryId"> enquiryId</label>
-            <input [(ngModel)]="salesEnquiry.enquiryId" name="enquiryId " id="enquiryId" type="number"
+            <label for="enquiryDate"> Date</label>
+            <input [(ngModel)]="salesEnquiry.enquiryDate" name="enquiryDate" id="enquiryDate" type="date"
               class="form-control">
           </div>
 
+
        <div class="form-group">
-         <label for="enquiryDate"> Date</label>
-         <input [(ngModel)]=" salesEnquiry.enquiryDate" name="enquiryDate" id="enquiryDate" type="date"
-           class="form-control">
-       </div>
-       <div class="form-group">
-         <label for="creditStatus"> creditStatus</label>
-         <input [(ngModel)]="salesEnquiry.creditStatus" name="creditStatus" id="creditStatus" type="text"
+         <label for="confirmStatus"> ConfirmStatus</label>
+         <input [(ngModel)]="salesEnquiry.confirmStatus" name="confirmStatus" id="confirmStatus" type="text"
            class="form-control">
        </div>
       
+
        <div class="form-group">
          <label for="deliveryType"> deliveryType</label>
          <input [(ngModel)]="salesEnquiry.deliveryType" name="deliveryType" id="deliveryType" type="text"
            class="form-control">
        </div>
 
+       <div class="form-group">
+          <label for="itemAvailability"> itemAvailability</label>
+          <input [(ngModel)]="salesEnquiry.itemAvailability" name="itemAvailability" id="itemAvailability" type="text"
+            class="form-control">
+        </div>
+
+
+
        <button class="btn btn-primary" type="submit">save</button>
-       <button class="btn btn-primary"> convert to order</button>
+       <!-- <button class="btn btn-primary"> convert to order</button> -->
 
      </form>
+
+
    </div>
    
    <div class="col">
-
      <div class="card">
        <!-- <h5 class="card-header">check aviliblity with Material Management</h5> -->
-       <div class="card-body">
-         <table class="table">
-           <thead>
-             <tr>
-               <th>Item Name</th>
-               <th>Item Quantity</th>
-               <th>Item Price</th>
-               <th>Availability</th>
+       <div class="card">
+          <!-- <h2 class="card-header">Select Currier</h2> -->
+          <div class="card-body">
+              <div class="form-group">
+                  <label for="stockid"> item Id</label>
+                  <input [(ngModel)]="stockDetails.stockid" name="stockid" id="stockid" type="text"
+                    class="form-control">
+                </div>
+        
+                <div class="form-group">
+                    <label for="stockname"> Item Name</label>
+                    <input [(ngModel)]="stockDetails.stockname" name="stockname" id="stockname" type="text"
+                      class="form-control">
+                  </div>
+        
+                  <div class="form-group">
+                      <label for="stockname"> Stcok Type</label>
+                      <input [(ngModel)]="stockDetails.stocktype" name="stocktype" id="stocktype" type="text"
+                        class="form-control">
+                    </div>
+        
+        
+                  <div class="form-group">
+                      <label for="recorderlimit"> recorderlimit</label>
+                      <input [(ngModel)]="stockDetails.recorderlimit" name="recorderlimit" id="recorderlimit" type="number"
+                        class="form-control">
+                    </div>
 
-             </tr>
-           </thead>
-           <tbody>
-             <tr *ngFor="let item of orderItems">
-               <td>{{item.enquiryProductName}}</td>
-               <td><input type="number" [(ngModel)]="item.quantity" name="quantity"></td>
-               <td>{{item.enquiryProductPrice}}</td>
-               <td><span>Not</span> Available</td>
+                    <div class="form-group">
+                      <label for="ltime"> ltime</label>
+                      <input [(ngModel)]="stockDetails.ltime" name="ltime" id="ltime" type="text"
+                        class="form-control">
+                    </div>
 
 
-             </tr>
-           </tbody>
+                    <div class="form-group">
+                      <label for="stockPrice"> stockPrice</label>
+                      <input [(ngModel)]="stockDetails.stockPrice" name="stockPrice" id="stockPrice" type="number"
+                        class="form-control">
+                    </div>
 
-         </table>
+                    <div class="form-group">
+                      <label for="quantity"> quantity</label>
+                      <input [(ngModel)]="stockDetails.quantity" name="quantity" id="quantity" type="number"
+                        class="form-control">
+                    </div>
 
+                    <div class="form-group">
+                      <label for="description"> description</label>
+                      <input [(ngModel)]="stockDetails.description" name="description" id="description" type="text"
+                        class="form-control">
+                    </div>
 
-       </div>
+                    <div class="form-group">
+                      <label for="status"> status</label>
+                      <input [(ngModel)]="stockDetails.status" name="status" id="status" type="text"
+                        class="form-control">
+                    </div>
+
+                 
+        
+        
+           
+          </div>
+        </div>
      </div>
-
-
    </div>
    
    <div class="col">
@@ -78,23 +123,32 @@
          <table class="table-sm">
            <thead>
              <tr>
-               <th>Item Id</th>
-               <th>Item Name</th>
-               <th>Item Price</th>
-               <th>exchange Type</th>
+               <th>stockid</th>
+               <th>stockname</th>
+               <th>stocktype</th>
+               <th>recorderlimit</th>
+               <th> ltime </th>
+               <th>stockPrice</th>
+               <th>quantity</th>
+               <th>description</th>
+               <th>status</th>
+              
                <th></th>
-
-
-
-
              </tr>
            </thead>
            <tbody>
-             <tr *ngFor="let p of products">
-               <td>{{p.prodId}}</td>
-               <td>{{p.prodName}}</td>
-               <td>{{p.prodPrice}}</td>
-               <td>{{p.qty}}</td>
+
+              <tr *ngFor="let p of products | async">
+                  <td>{{p.stockid}}</td>
+                  <th> {{p.stockname}}</th>
+                  <td>{{p.stocktype}}</td>
+                  <td>{{p.recorderlimit}}</td>
+                  <td>{{p.ltime}}</td>
+                  <td>{{p.stockPrice}}</td>
+                  <td>{{p.quantity}}</td>
+                  <td>{{p.description}}</td>
+                  <td>{{p.status}}</td>
+
                <td><button (click)="addItem(p)" class="btn-sm btn-primary">Add</button></td>
 
              </tr>

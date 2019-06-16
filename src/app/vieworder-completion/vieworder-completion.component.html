@@ -1,3 +1,28 @@
-<p>
-  vieworder-completion works!
-</p>
+<table class="table" >
+  <thead>
+    <tr>
+      <th> orderId</th>
+      <th>date</th>
+      <th>orderStatus</th>
+     
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let p of events ">
+      <td>{{p.orderId}}</td>
+      <td>{{p.date}}</td>
+      <td>{{p.orderStatus}}</td>
+     
+
+      <td>
+          <button [routerLink] ="['/issue-note-ware-house',p.orderId]"type="button" class="btn-materials-mangement"> admin </button> </td>
+      <td></td>
+      <td> 
+          <!-- <button  [routerLink] ="['/reserve24',p.customerId]" type="button" class="btn"> Reserve </button> -->
+      </td>
+    </tr>
+  </tbody>
+  
+  </table>
+  

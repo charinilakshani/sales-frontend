@@ -8,7 +8,8 @@ import { returnOrder } from '../Model/returnOrder';
 export class ReturnOrderService {
 
   constructor( private http:HttpClient) {} 
-  url ="  http://localhost:8081/returnOrder"
+  // url ="  http://localhost:8081/returnOrder"
+  url ="/api/returnOrder"
 
   getAllReturnProducts() {
     console.log("get all customerDetails ", this.http.get<returnOrder[]>(this.url));

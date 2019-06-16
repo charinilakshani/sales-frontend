@@ -6,9 +6,11 @@ import { salesOrder } from '../Model/salesOrder';
   providedIn: 'root'
 })
 export class SalesOrderService {
-  url =" http://localhost:8080/salesOrder"
+  // url =" http://localhost:8080/salesOrder"
+  url ="/api/salesOrders"
 
   constructor(private http:HttpClient) {}
+  
   getAllSalesDetails() {
     console.log("get all sales ", this.http.get<salesOrder[]>(this.url));
     return this.http.get<salesOrder[]>(this.url);
@@ -16,12 +18,13 @@ export class SalesOrderService {
   }
  
     addNewProduct(Products) {
-      console.log( Products);
+
+      console.log(" pass from the back end" + Products);
       return this.http.post(this.url,Products);
     }
   
     updateProduct(Products) {
-      console.log("update from front service", this.http.put(this.url, Products));
+      console.log("updated from the server",Products)
       return this.http.put(this.url, Products);
     }
 

@@ -1,79 +1,268 @@
 
-<form #f ="ngForm" (ngSubmit)="save(f.value)" >
-  <div class="card">
-    <h5 class="card-header">This order is passed to materials management to process.</h5>
-  
-      <div class="card-body">
-        <div class="row">
-            <div class="col-md-6">
+ <div class="row">
+  <div class="col">
 
-                <input #orderId="ngModel" [(ngModel)]="salesOrder.orderId" name="orderId" id="orderId" type="text" class="form-control" readonly="true">
-                
-                <h5 class="card-title">Item id</h5>
-                <div class="form-group">
-                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
-          
-          
-                <h5 class="card-title">itemName</h5>
-          
-                <div class="form-group">
-                  <input #itemName ="ngModel" [(ngModel)] ="salesOrder.itemName" name ="itemName" id ="itemName" type="text" class="form-control">
-                </div>
-                <h5 class="card-title">quntity</h5>
-                <div class="form-group">
-                  <input #qty ="ngModel" [(ngModel)] ="salesOrder.qty" name ="qty" id ="qty" type="number" class="form-control">
-                </div>
-                <h5 class="card-title">mainLocation</h5>
-                <div class="form-group">
-                  <input #mainLocation ="ngModel" [(ngModel)] ="salesOrder.mainLocation" name ="mainLocation" id ="mainLocation" type="text" class="form-control">
-                </div>
-                <h5 class="card-title">orderDate</h5>
-                <div class="form-group">
-                  <input #orderDate ="ngModel" [(ngModel)] ="salesOrder.orderDate" name ="orderDate" id ="orderDate" type="datetime-local" class="form-control">
-                </div>
-          
-          
-            </div>
-            <div class="col-md-6">
-                <h5 class="card-title">productName</h5>
-                <div class="form-group">
-                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
 
-                <h5 class="card-title">productName</h5>
-                <div class="form-group">
-                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
 
-                <h5 class="card-title">productName</h5>
-                <div class="form-group">
-                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
+      <input #orderId="ngModel" [(ngModel)]="salesOrder.orderId" name="orderId" id="orderId" type="text"
+        class="form-control" readonly="true">
+        
+        <div class="form-group">
+           <label for="businessId"> Busness Id</label>
+           <input [(ngModel)]="salesOrder.businessId" name="businessId " id="businessId" type="number"
+             class="form-control">
+         </div>
 
-                <h5 class="card-title">productName</h5>
-                <div class="form-group">
-                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
-
-                <h5 class="card-title">productName</h5>
-                <div class="form-group">
-                  <input #itemId ="ngModel" [(ngModel)] ="salesOrder.itemId" name ="itemId" id ="itemId" type="number" class="form-control">
-                </div>
-              </div>
+         <div class="form-group">
+          <label for="orderName"> Busness Id</label>
+          <input [(ngModel)]="salesOrder.orderName" name="orderName " id="orderName" type="text"
+            class="form-control">
         </div>
 
-        
-         
-            
-
-        <p class="card-text">  this product details send to check  with MM</p>
-        <button class="btn btn-primary" > save</button>
-       
+      <div class="form-group">
+        <label for="date"> Date</label>
+        <input [(ngModel)]="salesOrder.date" name="date" id="date" type="date"
+          class="form-control">
       </div>
-    
-   
- 
-  </div>
-</form>
+      <div class="form-group">
+        <label for="deliveryType"> DeleveryType</label>
+        <input [(ngModel)]="salesOrder.deliveryType" name="deliveryType" id="deliveryType" type="text"
+          class="form-control">
+      </div>
+
+
+      <div class="form-group">
+          <label for="orderStatus"> Order Status</label>
+          <input [(ngModel)]="salesOrder.orderStatus" name="orderStatus" id="orderStatus" type="text"
+            class="form-control">
+        </div>
+
+      <div class="form-group">
+        <label for="orderType"> orderType</label>
+        <select [(ngModel)]="salesOrder.orderType" name="orderType" id="orderType" type="text"
+          class="form-control">
+        
+          <option value="order">order</option>
+          <option value="return">return</option>
+          <option value="cancel">cancel</option>
+
+        </select>
+      </div>
+
+      <div class="form-group">
+
+        <label for="returnDescription"> return Description</label>
+        <input [(ngModel)]="salesOrder.returnDescription" name="returnDescription" id="returnDescription" type="text"
+          class="form-control">
+      </div>
   
+    <h2>  Add Client Info</h2>
+
+    <div class="row" >
+      <label for="email"> Email</label>
+      <div class="col">
+        
+        <div class="form-group">        
+        <input [(ngModel)]="client.email" name="email" id="email" type="text"
+          class="form-control">
+        </div>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary btn-sm"  (click)="getCustomer(client.email)">Find</button>
+      </div>
+    </div>
+    
+      <div class="form-group">
+        <label for="enquiryId"> Customer Name </label>
+        <input [(ngModel)]="client.customerId" name="customerId " id="customerId" type="number"
+          class="form-control" readonly>
+      </div>
+
+   <div class="form-group">
+     <label for="customerName"> Trading Name</label>
+     <input [(ngModel)]=" client.customerName" name="customerName" id="customerName" type="text"
+       class="form-control">
+   </div>
+   <div class="form-group">
+     <label for="mainLocation"> Main Location</label>
+     <input [(ngModel)]="client.mainLocation" name="mainLocation" id="mainLocation" type="text"
+       class="form-control">
+   </div>
+  
+   <div class="form-group">
+     <label for="deliveryLocation"> Delevery Location</label>
+     <input [(ngModel)]="client.deliveryLocation" name="deliveryLocation" id="deliveryLocation" type="text"
+       class="form-control">
+   </div>
+
+   <div class="form-group">
+    <label for="collectionLocation"> Collection  Location</label>
+    <input [(ngModel)]="client.collectionLocation" name="collectionLocation" id="collectionLocation" type="text"
+      class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="telephoneNumber"> Tel Number</label>
+    <input [(ngModel)]="client.telephoneNumber" name="telephoneNumber" id="telephoneNumber" type="text"
+      class="form-control">
+  </div>
+
+
+   <button class="btn btn-primary" type="submit">save</button>
+    </form>
+  </div>
+  
+  
+  <div class="col">
+
+    
+<div class="card">
+  <!-- <h2 class="card-header">Select Currier</h2> -->
+  <div class="card-body">
+      <div class="form-group">
+          <label for="stockid"> item Id</label>
+          <input [(ngModel)]="order.stockid" name="stockid" id="stockid" type="text"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="stockname"> Item Name</label>
+            <input [(ngModel)]="stockDetails.stockname" name="stockname" id="stockname" type="text"
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+              <label for="stockname"> Stcok Type</label>
+              <input [(ngModel)]="stockDetails.stocktype" name="stocktype" id="stocktype" type="text"
+                class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="recorderlimit"> recorderlimit</label>
+              <input [(ngModel)]="stockDetails.recorderlimit" name="recorderlimit" id="recorderlimit" type="number"
+                class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="ltime"> ltime</label>
+              <input [(ngModel)]="stockDetails.ltime" name="ltime" id="ltime" type="text"
+                class="form-control">
+            </div>
+
+
+
+
+          <div class="form-group">
+              <label for="quantity"> quantity</label>
+              <input [(ngModel)]="stockDetails.quantity" name="quantity" id="quantity" type="number"
+                class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="stockPrice"> Price </label>
+                <input [(ngModel)]="stockDetails.stockPrice" name="stockPrice" id="stockPrice" type="text"
+                  class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="description"> description</label>
+                <input [(ngModel)]="stockDetails.description" name="description" id="description" type="text"
+                  class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="status"> status</label>
+                <input [(ngModel)]="stockDetails.status" name="status" id="status" type="text"
+                  class="form-control">
+              </div>
+
+           
+
+   
+  </div>
+</div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <h5 class="card-header">Select items for the Order</h5>
+      <div class="card-body">
+        <table class="table-sm">
+          <thead>
+            <tr>
+              <th>stockid</th>
+               <th>stockname</th>
+               <th>stocktype</th>
+               <th>recorderlimit</th>
+               <th> ltime </th>
+               <th>stockPrice</th>
+               <th>quantity</th>
+               <th>description</th>
+               <th>status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr *ngFor="let p of products | async">
+              <td>{{p.stockid}}</td>
+              <th> {{p.stockname}}</th>
+              <td>{{p.stocktype}}</td>
+              <td>{{p.recorderlimit}}</td>
+              <td>{{p.ltime}}</td>
+              <td>{{p.stockPrice}}</td>
+              <td>{{p.quantity}}</td>
+              <td>{{p.description}}</td>
+              <td>{{p.status}}</td>
+              
+              <td><button (click)="addItem(p)" type="submit" class="btn-sm btn-primary">Add</button></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+<div>
+    <br><h2> Add Currier Info</h2><br>
+    <h2>  </h2>
+
+    <div class="row">
+      <label for="email"> Email</label>
+      <div class="col">
+        
+        <div class="form-group">        
+        <input [(ngModel)]="curier.email" name="email" id="email" type="text"
+          class="form-control">
+        </div>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary btn-sm"  (click)="getCurier(curier.email)">Find</button>
+      </div>
+    </div>
+    
+      <div class="form-group">
+        <label for="courierId"> courierId </label>
+        <input [(ngModel)]="curier.courierId" name="courierId " id="courierId" type="number"
+          class="form-control" readonly>
+      </div>
+
+   <div class="form-group">
+     <label for="courierName">courierName</label>
+     <input [(ngModel)]=" curier.courierName" name="courierName" id="courierName" type="text"
+       class="form-control">
+   </div>
+   <div class="form-group">
+     <label for="courierMobileNumber">  courierMobileNumber</label>
+     <input [(ngModel)]="curier.courierMobileNumber" name="courierMobileNumber" id="courierMobileNumber" type="text"
+       class="form-control">
+   </div>
+</div>
+
+   
+
+
+   
+  
+   
+  </div>
+
+</div>
+

@@ -1,26 +1,31 @@
-export interface salesOrder {
+import { clientInfo } from './clientInfo';
+import { salesOrderItems } from './salesOrderItems';
+import { CourierInfo } from './CourierInfo';
+
+export class salesOrder {
 
     orderId: number;
     businessId: number;
-    enquiryId: number;
-    itemId: number;
-    itemName: String;
-    qty:number;
-    deliveryType: String;
-    mainLocation: String;
-    deliveryLocation: String;
-    collectionLocation: String;
-    telphoneNumber:String;
-    orderDate: Date;
-    courierEmployeeId: String;
-    courierName: String;
-    curierMobileNumber: String;
-    curierEmail: String;
+    orderName:string;
+    date: string;
+    deliveryType: string;
+    orderStatus:  string;
+    orderType:string;
+    returnDescription:string;
+    
 
-     materialManagementStatus: String;
-     productionStatus: String;
-     wareHouseStatus: String;
-     cancellationStatus: String;
-     returnType:String;
+    stockid:number;
+    stockname:string;
+    stocktype:string;
+    recorderlimit:number;
+    ltime:string;
+    stockPrice:number;
+    quantity:number;
+    description:string;
+    status:string;
+  
+
+    clientInfo:clientInfo;
+    courierInfo:CourierInfo;
    
 }

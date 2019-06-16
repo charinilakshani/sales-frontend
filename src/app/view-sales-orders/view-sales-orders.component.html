@@ -4,17 +4,15 @@
 <table class="table" >
     <thead>
       <tr>
-        <th> clientId</th>
-        <th>quntity</th>
-        <th>price</th>
-        <th> inqurieDate</th>
-        <th>customerName</th>
-        <th>deleveryType</th>
-        <th>deleveryLocation</th>
-        
-        <th> courierName</th>
+        <th> orderId</th>
+        <th>deliveryType</th>
+        <th>orderStatus</th>
+        <th> orderType</th>
+        <th>stockname</th>
+        <th>quantity</th>
+      
         <th> send to materials management </th>
-        <th> view order completion(production) </th>
+      
       
         
 
@@ -22,25 +20,22 @@
     </thead>
     <tbody>
       <tr *ngFor ="let p of sales | async">
-        <td>{{p.itemName}}</td>
-        <td>{{p.qty}}</td>
-        <td></td>
+        <td>{{p.orderId}}</td>
         <td>{{p.deliveryType}}</td>
-        <td>{{p.mainLocation}}</td>
-        <td>{{p.orderDate}}</td>
-        <td>{{p.businessId}}</td>
-        <td>
-          
-        </td>
+        <td>{{p.orderStatus}}</td>
+        <td>{{p.orderType}}</td>
+        <td>{{p.stockname}}</td>
+        <td>{{p.quantity}}</td>
+       
         <td>
             <button  [routerLink] ="['/send-materials-managment',p.orderId]"  type="button" class="btn-materials-mangement"> view </button>
         </td>
        
 
-        <td> 
+        <!-- <td> 
           <button type="button"  class="btn"> view </button>
                    
-        </td>
+        </td> -->
       </tr>
     </tbody>
     

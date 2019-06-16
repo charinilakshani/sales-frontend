@@ -30,10 +30,10 @@ export class ViewReturnOrderComponent implements OnInit {
 
     let salesOrder = <salesOrder>new Object();
     salesOrder.orderId = salesOrder.orderId;
-    salesOrder.orderDate = salesOrder.orderDate;
-    salesOrder.itemId = salesOrder.itemId;
-    salesOrder.returnType ="exchange"
-    salesOrder.qty = salesOrder.qty;
+    // salesOrder.orderDate = salesOrder.orderDate;
+    // salesOrder.itemId = salesOrder.itemId;
+    // salesOrder.returnType ="exchange"
+    // salesOrder.qty = salesOrder.qty;
     
   
     this.salesorderService.updateProduct(salesOrder).subscribe(data => {
@@ -50,11 +50,11 @@ export class ViewReturnOrderComponent implements OnInit {
     // update order table;
 
     let salesOrder = <salesOrder>new Object();
-    salesOrder.orderId = salesOrder.orderId;
-    salesOrder.orderDate = salesOrder.orderDate;
-    salesOrder.itemId = salesOrder.itemId;
-    salesOrder.returnType ="repire"
-    salesOrder.qty = salesOrder.qty;
+    // salesOrder.orderId = salesOrder.orderId;
+    // salesOrder.orderDate = salesOrder.orderDate;
+    // salesOrder.itemId = salesOrder.itemId;
+    // salesOrder.returnType ="repire"
+    // salesOrder.qty = salesOrder.qty;
 
     this.salesorderService.updateProduct(salesOrder).subscribe(data => {
       console.log(" update product", data);

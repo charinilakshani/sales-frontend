@@ -1,10 +1,11 @@
-import { salesEnquiry } from './salesEnquiry';
+import { SalesEnquiry } from './SalesEnquiry';
 
-export class salesEnquiryItem {
+export class salesEnquiryItems {
     enquiryItemId:number;
     enquiryProductName:String;
     quantity:number;  
     enquiryProductPrice:number;  
-    salesEnquiry:salesEnquiry
+    salesEnquiry:SalesEnquiry;
+    
     
 }

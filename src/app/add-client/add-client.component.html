@@ -1,0 +1,68 @@
+
+<h2> Add new person to the system</h2>
+
+<form #f="ngForm" (ngSubmit)="save(f.value)" id="clientForm">
+
+ 
+
+
+    <div class="form-group">
+      <label for="customerId"> customerId </label>
+      <input [(ngModel)]="client.customerId" name="customerId" id="customerId" type="number"
+        class="form-control" readonly>
+    </div>
+
+ <div class="form-group">
+   <label for="customerName"> customerName</label>
+   <input [(ngModel)]=" client.customerName" name="customerName" id="customerName" type="text"
+     class="form-control">
+ </div>
+
+ <div class="form-group">
+    <label for="tradingName"> trading Name</label>
+    <input [(ngModel)]=" client.tradingName" name="tradingName" id="tradingName" type="text"
+      class="form-control">
+  </div>
+
+
+
+ <div class="form-group">
+   <label for="mainLocation"> Main Location</label>
+   <input [(ngModel)]="client.mainLocation" name="mainLocation" id="mainLocation" type="text"
+     class="form-control">
+ </div>
+
+ <div class="form-group">
+   <label for="deliveryLocation"> Delevery Location</label>
+   <input [(ngModel)]="client.deliveryLocation" name="deliveryLocation" id="deliveryLocation" type="text"
+     class="form-control">
+ </div>
+
+ <div class="form-group">
+  <label for="collectionLocation"> Collection  Location</label>
+  <input [(ngModel)]="client.collectionLocation" name="collectionLocation" id="collectionLocation" type="text"
+    class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="telephoneNumber"> Tel Number</label>
+  <input [(ngModel)]="client.telephoneNumber" name="telephoneNumber" id="telephoneNumber" type="text"
+    class="form-control">
+</div>
+<div class="form-group">
+    <label for="email"> Email </label>
+    <input [(ngModel)]="client.email" name="email" id="email" type="text"
+      class="form-control">
+  </div>
+
+  </form>
+  <div class="row">
+    <div class="col">
+ <button class="btn btn-primary" form="clientForm" type="submit">save</button>
+
+    </div>
+    <div class="col">
+      <button (click)="addItem(client.customerId)" class="btn btn-primary" >delete</button>
+
+    </div>
+  </div>

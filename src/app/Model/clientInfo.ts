@@ -1,4 +1,7 @@
-export interface clienInfo {
+import { salesOrder } from './salesOrder';
+
+export class clientInfo {
+    
     customerId: number;
     customerName: String;
     tradingName: String;
@@ -7,6 +10,10 @@ export interface clienInfo {
     collectionLocation: String;
     telephoneNumber: String;
     email: String;
+    salesOrder:salesOrder;
 
 
 }
+
+
+
