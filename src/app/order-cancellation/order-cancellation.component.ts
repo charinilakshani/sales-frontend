@@ -17,7 +17,7 @@ export class OrderCancellationComponent implements OnInit {
 
   constructor( private salesorderService: SalesOrderService,
                private ordercancellationService:OrderCancellationService) { 
-    this.sales = this.salesorderService.getAllSalesDetails();
+    // this.sales = this.ordercancellationService.addForCancellatino();
     console.log("get all customer details", this.sales);
   }
 

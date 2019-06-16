@@ -14,12 +14,6 @@
              class="form-control">
          </div>
 
-         <div class="form-group">
-          <label for="orderName"> Busness Id</label>
-          <input [(ngModel)]="salesOrder.orderName" name="orderName " id="orderName" type="text"
-            class="form-control">
-        </div>
-
       <div class="form-group">
         <label for="date"> Date</label>
         <input [(ngModel)]="salesOrder.date" name="date" id="date" type="date"
@@ -56,10 +50,13 @@
         <input [(ngModel)]="salesOrder.returnDescription" name="returnDescription" id="returnDescription" type="text"
           class="form-control">
       </div>
-  
+
+
+
+      
     <h2>  Add Client Info</h2>
 
-    <div class="row" >
+    <div class="row">
       <label for="email"> Email</label>
       <div class="col">
         
@@ -107,7 +104,7 @@
     <input [(ngModel)]="client.telephoneNumber" name="telephoneNumber" id="telephoneNumber" type="text"
       class="form-control">
   </div>
-
+  
 
    <button class="btn btn-primary" type="submit">save</button>
     </form>
@@ -137,20 +134,18 @@
               <input [(ngModel)]="stockDetails.stocktype" name="stocktype" id="stocktype" type="text"
                 class="form-control">
             </div>
-            <div class="form-group">
-              <label for="recorderlimit"> recorderlimit</label>
-              <input [(ngModel)]="stockDetails.recorderlimit" name="recorderlimit" id="recorderlimit" type="number"
-                class="form-control">
-            </div>
 
             <div class="form-group">
-              <label for="ltime"> ltime</label>
-              <input [(ngModel)]="stockDetails.ltime" name="ltime" id="ltime" type="text"
-                class="form-control">
-            </div>
-
-
-
+                <label for="recorderlimit"> recorderlimit</label>
+                <input [(ngModel)]="stockDetails.recorderlimit" name="recorderlimit" id="recorderlimit" type="number"
+                  class="form-control">
+              </div>
+  
+              <div class="form-group">
+                <label for="ltime"> ltime</label>
+                <input [(ngModel)]="stockDetails.ltime" name="ltime" id="ltime" type="text"
+                  class="form-control">
+              </div>
 
           <div class="form-group">
               <label for="quantity"> quantity</label>
@@ -174,7 +169,6 @@
                   class="form-control">
               </div>
 
-           
 
    
   </div>
@@ -188,31 +182,30 @@
         <table class="table-sm">
           <thead>
             <tr>
-              <th>stockid</th>
-               <th>stockname</th>
-               <th>stocktype</th>
-               <th>recorderlimit</th>
-               <th> ltime </th>
-               <th>stockPrice</th>
-               <th>quantity</th>
-               <th>description</th>
-               <th>status</th>
-              <th></th>
+                <th>stockid</th>
+                <th>stockname</th>
+                <th>stocktype</th>
+                <th>recorderlimit</th>
+                <th> ltime </th>
+                <th>stockPrice</th>
+                <th>quantity</th>
+                <th>description</th>
+                <th>status</th>
+               <th></th>
             </tr>
           </thead>
           <tbody>
             
             <tr *ngFor="let p of products | async">
-              <td>{{p.stockid}}</td>
-              <th> {{p.stockname}}</th>
-              <td>{{p.stocktype}}</td>
-              <td>{{p.recorderlimit}}</td>
-              <td>{{p.ltime}}</td>
-              <td>{{p.stockPrice}}</td>
-              <td>{{p.quantity}}</td>
-              <td>{{p.description}}</td>
-              <td>{{p.status}}</td>
-              
+                <td>{{p.stockid}}</td>
+                <th> {{p.stockname}}</th>
+                <td>{{p.stocktype}}</td>
+                <td>{{p.recorderlimit}}</td>
+                <td>{{p.ltime}}</td>
+                <td>{{p.stockPrice}}</td>
+                <td>{{p.quantity}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.status}}</td>
               <td><button (click)="addItem(p)" type="submit" class="btn-sm btn-primary">Add</button></td>
 
             </tr>
